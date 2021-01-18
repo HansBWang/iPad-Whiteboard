@@ -1,24 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad10_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InterviewWhiteboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="view">
+                        <rect key="frame" x="0.0" y="0.0" width="1180" height="820"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ine-Cu-pzv" userLabel="canvasView" customClass="CanvasView" customModule="InterviewWhiteboard" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="1180" height="820"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNn-My-fld" userLabel="btnContainer">
+                                <rect key="frame" x="0.0" y="385" width="60" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBj-se-0lf">
+                                        <rect key="frame" x="11" y="3" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="gDE-1b-MGA"/>
+                                            <constraint firstAttribute="width" constant="44" id="iBg-ap-aLA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="pencil.circle" catalog="system" symbolScale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toggleMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K3i-E3-uJq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="7QT-83-HGd"/>
+                                    <constraint firstAttribute="trailing" secondItem="tBj-se-0lf" secondAttribute="trailing" constant="5" id="HFd-kH-5fB"/>
+                                    <constraint firstItem="tBj-se-0lf" firstAttribute="centerY" secondItem="RNn-My-fld" secondAttribute="centerY" id="i8h-UK-w7s"/>
+                                    <constraint firstAttribute="height" constant="50" id="wz2-dU-vXy"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="niM-3m-NYk" userLabel="loadingIndicator">
+                                <rect key="frame" x="571.5" y="391.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zN-5f-gLe" userLabel="statusbarBG">
+                                <rect key="frame" x="0.0" y="0.0" width="1180" height="0.0"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7zN-5f-gLe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7r4-jZ-cek"/>
+                            <constraint firstItem="niM-3m-NYk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9kQ-Fj-fi1"/>
+                            <constraint firstAttribute="bottom" secondItem="Ine-Cu-pzv" secondAttribute="bottom" id="H7k-4e-nmN"/>
+                            <constraint firstItem="niM-3m-NYk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O60-AS-Yl0"/>
+                            <constraint firstItem="7zN-5f-gLe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="U22-S6-q2S"/>
+                            <constraint firstAttribute="trailing" secondItem="Ine-Cu-pzv" secondAttribute="trailing" id="XKs-dP-ETq"/>
+                            <constraint firstItem="RNn-My-fld" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cF3-sE-ygI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="7zN-5f-gLe" secondAttribute="bottom" id="gz7-34-suu"/>
+                            <constraint firstItem="RNn-My-fld" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mps-FZ-TBI"/>
+                            <constraint firstItem="Ine-Cu-pzv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="obV-hK-S4h"/>
+                            <constraint firstItem="Ine-Cu-pzv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="q4l-jD-tgK"/>
+                            <constraint firstAttribute="trailing" secondItem="7zN-5f-gLe" secondAttribute="trailing" id="rMn-Bb-7gp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnContainer" destination="RNn-My-fld" id="aZa-wz-Cmf"/>
+                        <outlet property="canvasView" destination="Ine-Cu-pzv" id="iF2-Qc-lfh"/>
+                        <outlet property="loadingIndicator" destination="niM-3m-NYk" id="3vp-3T-yzG"/>
+                        <outlet property="modeBtn" destination="tBj-se-0lf" id="1dX-hb-fdR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="13.728813559322035" y="103.90243902439025"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
