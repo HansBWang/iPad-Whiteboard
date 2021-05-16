@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28350EF52650AA90004D7C52 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28350EF42650AA90004D7C52 /* MenuTableViewController.swift */; };
 		287C256325B4E986002492D3 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C256225B4E986002492D3 /* CanvasView.swift */; };
 		28B5110F25B402A50048CD75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B5110E25B402A50048CD75 /* AppDelegate.swift */; };
 		28B5111125B402A50048CD75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B5111025B402A50048CD75 /* SceneDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28350EF42650AA90004D7C52 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		287C256225B4E986002492D3 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		28B5110B25B402A50048CD75 /* InterviewWhiteboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterviewWhiteboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28B5110E25B402A50048CD75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				28B5111225B402A50048CD75 /* ViewController.swift */,
 				287C256225B4E986002492D3 /* CanvasView.swift */,
 				28B5111425B402A50048CD75 /* Main.storyboard */,
+				28350EF42650AA90004D7C52 /* MenuTableViewController.swift */,
 				28B5111725B402A80048CD75 /* Assets.xcassets */,
 				28B5111925B402A80048CD75 /* LaunchScreen.storyboard */,
 				28B5111C25B402A80048CD75 /* Info.plist */,
@@ -145,6 +148,7 @@
 			files = (
 				28B5111325B402A50048CD75 /* ViewController.swift in Sources */,
 				28B5112725B4185A0048CD75 /* DataModal.swift in Sources */,
+				28350EF52650AA90004D7C52 /* MenuTableViewController.swift in Sources */,
 				287C256325B4E986002492D3 /* CanvasView.swift in Sources */,
 				28B5110F25B402A50048CD75 /* AppDelegate.swift in Sources */,
 				28B5111125B402A50048CD75 /* SceneDelegate.swift in Sources */,

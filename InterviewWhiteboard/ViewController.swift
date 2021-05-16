@@ -16,7 +16,9 @@ class ViewController: UIViewController, PKCanvasViewDelegate {
     @IBOutlet weak var canvasView: CanvasView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var modeBtn: UIButton!
-    @IBOutlet weak var btnContainer: UIView!
+    @IBOutlet weak var modeBtnContainer: UIView!
+    @IBOutlet weak var settingBtnContainer: UIView!
+    @IBOutlet weak var settingTrailingConstraint: NSLayoutConstraint!
     
     let toolPicker = PKToolPicker()
     let dataModelController = DataModelController()
@@ -46,13 +48,19 @@ class ViewController: UIViewController, PKCanvasViewDelegate {
     }
     
     func configSubview() {
-        btnContainer.layer.cornerRadius = 20
-        btnContainer.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-        btnContainer.layer.shadowRadius = 2
-        btnContainer.layer.shadowOffset = .init(width: 1, height: 1)
-        btnContainer.layer.shadowOpacity = 0.1
+        modeBtnContainer.layer.cornerRadius = 20
+        modeBtnContainer.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        modeBtnContainer.layer.shadowRadius = 2
+        modeBtnContainer.layer.shadowOffset = .init(width: 1, height: 1)
+        modeBtnContainer.layer.shadowOpacity = 0.1
         
-        updateModeBtn(canvasView.isDrawingMode)
+        updateBtns(canvasView.isDrawingMode)
+        
+        settingBtnContainer.layer.cornerRadius = 16
+        settingBtnContainer.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        settingBtnContainer.layer.shadowRadius = 2
+        settingBtnContainer.layer.shadowOffset = .init(width: 1, height: 1)
+        settingBtnContainer.layer.shadowOpacity = 0.1
         
         canvasView.delegate = self
         canvasView.backgroundColor = .clear
@@ -71,12 +79,18 @@ class ViewController: UIViewController, PKCanvasViewDelegate {
     @IBAction func toggleMode(_ sender: Any) {
         let isDrawingMode = !self.canvasView.isDrawingMode
         self.canvasView.isDrawingMode = isDrawingMode
-        updateModeBtn(isDrawingMode)
+        updateBtns(isDrawingMode)
     }
     
-    func updateModeBtn(_ isDrawingMode: Bool) {
-        let img = isDrawingMode ? UIImage(systemName: "pencil.circle.fill"):UIImage(systemName: "pencil.circle")
+    func updateBtns(_ isDrawingMode: Bool) {
+        let config = UIImage.SymbolConfiguration.init(scale: .large)
+        let img =  UIImage(systemName: isDrawingMode ? "pencil.circle.fill" :"pencil.circle", withConfiguration: config)
         self.modeBtn.setImage(img, for: .normal)
+        
+        self.settingTrailingConstraint.constant = isDrawingMode ? -self.settingBtnContainer.frame.width : 0
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     // MARK: Canvas View Delegate
