@@ -9,17 +9,30 @@ import UIKit
 
 let CellReuseId = "MenuCell"
 
+@objc protocol MenuDelegate {
+    func cleanBoard()
+}
+
 class MenuTableViewController: UITableViewController {
-    let rows: [MenuRow] = [
-        .init(title: "Clean Board", image: UIImage(systemName: "trash")!, imgTint: .systemGreen, action: {
-            print("on click - clean board")
-        })
-    ]
+    weak var delegate: MenuDelegate?
+    var rows: [MenuRow] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         preferredContentSize = CGSize.init(width: 200, height: 44)
         tableView.rowHeight = 44
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: CellReuseId)
+        self.rows = [
+            .init(title: "Clean Board", image: UIImage(systemName: "trash")!, imgTint: .systemGreen, action: {
+                print("on click - clean board")
+                let alert = UIAlertController(title: "Do you want to clean the board?", message: "Once cleaned the drawing won't be able to restore.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+                    self.delegate?.cleanBoard()
+                    self.dismiss(animated: true, completion: nil)
+                }))
+                alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+            })
+        ]
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

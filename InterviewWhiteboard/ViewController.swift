@@ -11,7 +11,7 @@ import PencilKit
 let Paper_Increase_Offset: CGFloat = 500
 let Paper_BG_Margin: CGFloat = 4
 
-class ViewController: UIViewController, PKCanvasViewDelegate {
+class ViewController: UIViewController, PKCanvasViewDelegate, MenuDelegate {
     
     @IBOutlet weak var canvasView: CanvasView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
@@ -93,6 +93,10 @@ class ViewController: UIViewController, PKCanvasViewDelegate {
         }
     }
     
+    func cleanBoard() {
+        self.canvasView.drawing = PKDrawing()
+    }
+    
     // MARK: Canvas View Delegate
     
     /// Delegate method: Note that the drawing has changed.
@@ -125,5 +129,12 @@ class ViewController: UIViewController, PKCanvasViewDelegate {
         }
         canvasView.contentSize = CGSize(width: contentWidth, height: contentHeight)
         contentBG.frame = CGRect.init(origin: .init(x: Paper_BG_Margin*canvasView.zoomScale, y: Paper_BG_Margin*canvasView.zoomScale), size: .init(width: contentWidth-Paper_BG_Margin*2*canvasView.zoomScale, height: contentHeight))
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(segue)
+        if let menuTVC = segue.destination as? MenuTableViewController {
+            menuTVC.delegate = self
+        }
     }
 }

@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAc-v9-aLL" userLabel="settingBtnContainer">
-                                <rect key="frame" x="1136" y="12" width="44" height="44"/>
+                                <rect key="frame" x="1136" y="16" width="44" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXf-WI-zEc" userLabel="Setting Btn">
                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -101,7 +101,7 @@
                             <constraint firstItem="Ine-Cu-pzv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="obV-hK-S4h"/>
                             <constraint firstItem="Ine-Cu-pzv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="q4l-jD-tgK"/>
                             <constraint firstAttribute="trailing" secondItem="7zN-5f-gLe" secondAttribute="trailing" id="rMn-Bb-7gp"/>
-                            <constraint firstItem="YAc-v9-aLL" firstAttribute="top" secondItem="7zN-5f-gLe" secondAttribute="bottom" constant="12" id="x7c-Ly-VoG"/>
+                            <constraint firstItem="YAc-v9-aLL" firstAttribute="top" secondItem="7zN-5f-gLe" secondAttribute="bottom" constant="16" id="x7c-Ly-VoG"/>
                         </constraints>
                     </view>
                     <connections>
