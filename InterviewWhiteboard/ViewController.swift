@@ -18,6 +18,7 @@ class ViewController: UIViewController, PKCanvasViewDelegate, MenuDelegate {
     @IBOutlet weak var modeBtn: UIButton!
     @IBOutlet weak var modeBtnContainer: UIView!
     @IBOutlet weak var settingBtnContainer: UIView!
+    @IBOutlet weak var modeBtnLeadingContstraint: NSLayoutConstraint!
     @IBOutlet weak var settingTrailingConstraint: NSLayoutConstraint!
     
     let toolPicker = PKToolPicker()
@@ -79,22 +80,36 @@ class ViewController: UIViewController, PKCanvasViewDelegate, MenuDelegate {
     @IBAction func toggleMode(_ sender: Any) {
         let isDrawingMode = !self.canvasView.isDrawingMode
         self.canvasView.isDrawingMode = isDrawingMode
-        updateBtns(isDrawingMode)
+        UIView.animate(withDuration: 0.4,
+                       delay: 0,
+                       usingSpringWithDamping: 0.4,
+                       initialSpringVelocity: 0,
+                       options: .curveEaseInOut,
+                       animations: {self.updateBtns(isDrawingMode)},
+                       completion: nil)
     }
     
     func updateBtns(_ isDrawingMode: Bool) {
         let config = UIImage.SymbolConfiguration.init(scale: .large)
         let img =  UIImage(systemName: isDrawingMode ? "pencil.circle.fill" :"pencil.circle", withConfiguration: config)
         self.modeBtn.setImage(img, for: .normal)
-        
-        self.settingTrailingConstraint.constant = isDrawingMode ? -self.settingBtnContainer.frame.width : 0
-        UIView.animate(withDuration: 0.3) {
-            self.view.layoutIfNeeded()
-        }
+        self.modeBtnLeadingContstraint.constant = isDrawingMode ? -20 : -30
+        self.settingTrailingConstraint.constant = isDrawingMode ? -self.settingBtnContainer.frame.width : -20
+        self.view.layoutIfNeeded()
     }
     
     func cleanBoard() {
-        self.canvasView.drawing = PKDrawing()
+        UIView.animate(withDuration: 0.3) {
+            self.canvasView.alpha = 0
+        } completion: { _ in
+            self.canvasView.drawing = PKDrawing()
+            UIView.animate(withDuration: 0.3) {
+                self.canvasView.alpha = 1
+            } completion: { _ in
+                // enter edit mode after cleaning
+                self.toggleMode(self)
+            }
+        }
     }
     
     // MARK: Canvas View Delegate
@@ -121,7 +136,7 @@ class ViewController: UIViewController, PKCanvasViewDelegate, MenuDelegate {
         } else {
             contentHeight = canvasView.bounds.height - canvasView.adjustedContentInset.top - canvasView.adjustedContentInset.bottom
         }
-        // Adjust the content size to always be bigger than the drawing height.
+        // Adjust the content size to always be bigger than the drawing width.
         if !drawing.bounds.isNull {
             contentWidth = max(canvasView.bounds.width, (drawing.bounds.maxX + Paper_Increase_Offset) * canvasView.zoomScale)
         } else {

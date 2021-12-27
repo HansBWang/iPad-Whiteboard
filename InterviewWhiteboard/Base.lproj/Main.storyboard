@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad10_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -22,7 +23,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAc-v9-aLL" userLabel="settingBtnContainer">
-                                <rect key="frame" x="1136" y="16" width="44" height="44"/>
+                                <rect key="frame" x="1136" y="44" width="64" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXf-WI-zEc" userLabel="Setting Btn">
                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -44,17 +45,17 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="xXf-WI-zEc" firstAttribute="centerX" secondItem="YAc-v9-aLL" secondAttribute="centerX" id="38S-vd-ip4"/>
-                                    <constraint firstAttribute="width" constant="44" id="C2t-3y-thy"/>
+                                    <constraint firstAttribute="width" constant="64" id="C2t-3y-thy"/>
+                                    <constraint firstItem="xXf-WI-zEc" firstAttribute="leading" secondItem="YAc-v9-aLL" secondAttribute="leading" id="XjU-Xv-KNE"/>
                                     <constraint firstItem="xXf-WI-zEc" firstAttribute="centerY" secondItem="YAc-v9-aLL" secondAttribute="centerY" id="kRs-kl-3Ge"/>
                                     <constraint firstAttribute="height" constant="44" id="nsz-4j-Uc7"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNn-My-fld" userLabel="modeBtnContainer">
-                                <rect key="frame" x="0.0" y="385" width="60" height="50"/>
+                                <rect key="frame" x="-20" y="369" width="80" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBj-se-0lf">
-                                        <rect key="frame" x="11" y="3" width="44" height="44"/>
+                                        <rect key="frame" x="31" y="3" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="gDE-1b-MGA"/>
                                             <constraint firstAttribute="width" constant="44" id="iBg-ap-aLA"/>
@@ -71,7 +72,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="7QT-83-HGd"/>
+                                    <constraint firstAttribute="width" constant="80" id="7QT-83-HGd"/>
                                     <constraint firstAttribute="trailing" secondItem="tBj-se-0lf" secondAttribute="trailing" constant="5" id="HFd-kH-5fB"/>
                                     <constraint firstItem="tBj-se-0lf" firstAttribute="centerY" secondItem="RNn-My-fld" secondAttribute="centerY" id="i8h-UK-w7s"/>
                                     <constraint firstAttribute="height" constant="50" id="wz2-dU-vXy"/>
@@ -81,7 +82,7 @@
                                 <rect key="frame" x="571.5" y="391.5" width="37" height="37"/>
                             </activityIndicatorView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zN-5f-gLe" userLabel="statusbarBG">
-                                <rect key="frame" x="0.0" y="0.0" width="1180" height="0.0"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1180" height="24"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -94,14 +95,14 @@
                             <constraint firstItem="niM-3m-NYk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O60-AS-Yl0"/>
                             <constraint firstItem="7zN-5f-gLe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="U22-S6-q2S"/>
                             <constraint firstAttribute="trailing" secondItem="Ine-Cu-pzv" secondAttribute="trailing" id="XKs-dP-ETq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YAc-v9-aLL" secondAttribute="trailing" id="brC-sJ-VBp"/>
-                            <constraint firstItem="RNn-My-fld" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cF3-sE-ygI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YAc-v9-aLL" secondAttribute="trailing" constant="-20" id="brC-sJ-VBp"/>
+                            <constraint firstItem="RNn-My-fld" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-16" id="cF3-sE-ygI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="7zN-5f-gLe" secondAttribute="bottom" id="gz7-34-suu"/>
-                            <constraint firstItem="RNn-My-fld" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mps-FZ-TBI"/>
+                            <constraint firstItem="RNn-My-fld" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-20" id="mps-FZ-TBI"/>
                             <constraint firstItem="Ine-Cu-pzv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="obV-hK-S4h"/>
                             <constraint firstItem="Ine-Cu-pzv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="q4l-jD-tgK"/>
                             <constraint firstAttribute="trailing" secondItem="7zN-5f-gLe" secondAttribute="trailing" id="rMn-Bb-7gp"/>
-                            <constraint firstItem="YAc-v9-aLL" firstAttribute="top" secondItem="7zN-5f-gLe" secondAttribute="bottom" constant="16" id="x7c-Ly-VoG"/>
+                            <constraint firstItem="YAc-v9-aLL" firstAttribute="top" secondItem="7zN-5f-gLe" secondAttribute="bottom" constant="20" id="x7c-Ly-VoG"/>
                         </constraints>
                     </view>
                     <connections>
@@ -109,6 +110,7 @@
                         <outlet property="loadingIndicator" destination="niM-3m-NYk" id="3vp-3T-yzG"/>
                         <outlet property="modeBtn" destination="tBj-se-0lf" id="1dX-hb-fdR"/>
                         <outlet property="modeBtnContainer" destination="RNn-My-fld" id="SZu-Wa-ngh"/>
+                        <outlet property="modeBtnLeadingContstraint" destination="mps-FZ-TBI" id="2yE-9V-g2N"/>
                         <outlet property="settingBtnContainer" destination="YAc-v9-aLL" id="npn-hn-rfC"/>
                         <outlet property="settingTrailingConstraint" destination="brC-sJ-VBp" id="VcY-ak-YXZ"/>
                     </connections>
