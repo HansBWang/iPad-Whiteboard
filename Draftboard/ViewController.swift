@@ -10,6 +10,8 @@ import PencilKit
 
 let Paper_Increase_Offset: CGFloat = 500
 let Paper_BG_Margin: CGFloat = 4
+let Paper_Corner_Radius: CGFloat = 5
+let Paper_Shadow: CGFloat = 1
 
 class ViewController: UIViewController, PKCanvasViewDelegate, MenuDelegate {
     
@@ -25,9 +27,9 @@ class ViewController: UIViewController, PKCanvasViewDelegate, MenuDelegate {
     let dataModelController = DataModelController()
     let contentBG: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 5
+        view.layer.cornerRadius = Paper_Corner_Radius
         view.backgroundColor = .systemBackground
-        view.layer.shadowOffset = .init(width: 1, height: 1)
+        view.layer.shadowOffset = .init(width: Paper_Shadow, height: Paper_Shadow)
         view.layer.shadowOpacity = 0.1
         return view
     }()
@@ -133,18 +135,20 @@ class ViewController: UIViewController, PKCanvasViewDelegate, MenuDelegate {
         let contentWidth: CGFloat
         // Adjust the content size to always be bigger than the drawing height.
         if !drawing.bounds.isNull {
-            contentHeight = max(canvasView.bounds.height, (drawing.bounds.maxY + Paper_Increase_Offset) * canvasView.zoomScale) - canvasView.adjustedContentInset.top - canvasView.adjustedContentInset.bottom
+            contentHeight = max(canvasView.bounds.height, drawing.bounds.maxY + Paper_Increase_Offset) - canvasView.adjustedContentInset.top - canvasView.adjustedContentInset.bottom
         } else {
             contentHeight = canvasView.bounds.height - canvasView.adjustedContentInset.top - canvasView.adjustedContentInset.bottom
         }
         // Adjust the content size to always be bigger than the drawing width.
         if !drawing.bounds.isNull {
-            contentWidth = max(canvasView.bounds.width, (drawing.bounds.maxX + Paper_Increase_Offset) * canvasView.zoomScale)
+            contentWidth = max(canvasView.bounds.width, drawing.bounds.maxX + Paper_Increase_Offset)
         } else {
             contentWidth = canvasView.bounds.width
         }
         canvasView.contentSize = CGSize(width: contentWidth, height: contentHeight)
-        contentBG.frame = CGRect.init(origin: .init(x: Paper_BG_Margin*canvasView.zoomScale, y: Paper_BG_Margin*canvasView.zoomScale), size: .init(width: contentWidth-Paper_BG_Margin*2*canvasView.zoomScale, height: contentHeight))
+        contentBG.frame = CGRect.init(origin: .init(x: Paper_BG_Margin*canvasView.zoomScale, y: Paper_BG_Margin*canvasView.zoomScale), size: .init(width: (contentWidth-Paper_BG_Margin*2)*canvasView.zoomScale, height: contentHeight*canvasView.zoomScale))
+        contentBG.layer.shadowOffset = .init(width: Paper_Shadow*canvasView.zoomScale, height: Paper_Shadow*canvasView.zoomScale)
+        contentBG.layer.cornerRadius = Paper_Corner_Radius * canvasView.zoomScale
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
