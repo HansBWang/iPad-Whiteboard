@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  InterviewWhiteboard
+//  Draftboard
 //
 //  Created by Hans Wang on 1/16/21.
 //
@@ -68,6 +68,7 @@ class ViewController: UIViewController, PKCanvasViewDelegate, MenuDelegate {
         canvasView.alwaysBounceVertical = true
         canvasView.alwaysBounceHorizontal = true
         canvasView.maximumZoomScale = 3
+        canvasView.bouncesZoom = true
         canvasView.insertSubview(contentBG, at: 0)
         contentBG.frame = CGRect.init(origin: .zero, size: canvasView.contentSize)
     }
@@ -99,11 +100,11 @@ class ViewController: UIViewController, PKCanvasViewDelegate, MenuDelegate {
     }
     
     func cleanBoard() {
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.5) {
             self.canvasView.alpha = 0
         } completion: { _ in
             self.canvasView.drawing = PKDrawing()
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: 0.5) {
                 self.canvasView.alpha = 1
             } completion: { _ in
                 // enter edit mode after cleaning

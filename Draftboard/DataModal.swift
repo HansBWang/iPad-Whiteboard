@@ -1,6 +1,6 @@
 //
 //  DataModal.swift
-//  InterviewWhiteboard
+//  Draftboard
 //
 //  Created by Hans Wang on 1/17/21.
 //

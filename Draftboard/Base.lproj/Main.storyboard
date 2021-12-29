@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad10_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <device id="ipad10_9rounded" orientation="landscape" layout="fullscreen" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -13,14 +13,33 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InterviewWhiteboard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Draftboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="view">
                         <rect key="frame" x="0.0" y="0.0" width="1180" height="820"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ine-Cu-pzv" userLabel="canvasView" customClass="CanvasView" customModule="InterviewWhiteboard" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EJK-Vi-pPW">
+                                <rect key="frame" x="490" y="292.5" width="200" height="235"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PencilIcon" translatesAutoresizingMaskIntoConstraints="NO" id="a1t-bU-4yQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="Kse-tg-Rto"/>
+                                            <constraint firstAttribute="height" constant="200" id="Zcz-3Z-4ia"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draftboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbJ-gv-GSO">
+                                        <rect key="frame" x="9.5" y="200" width="181" height="35"/>
+                                        <fontDescription key="fontDescription" name="Menlo-BoldItalic" family="Menlo" pointSize="30"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ine-Cu-pzv" userLabel="canvasView" customClass="CanvasView" customModule="Draftboard" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="1180" height="820"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAc-v9-aLL" userLabel="settingBtnContainer">
                                 <rect key="frame" x="1136" y="44" width="64" height="44"/>
@@ -89,6 +108,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="EJK-Vi-pPW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0p9-uc-Zoz"/>
+                            <constraint firstItem="EJK-Vi-pPW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4KQ-6X-VXu"/>
                             <constraint firstItem="7zN-5f-gLe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7r4-jZ-cek"/>
                             <constraint firstItem="niM-3m-NYk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9kQ-Fj-fi1"/>
                             <constraint firstAttribute="bottom" secondItem="Ine-Cu-pzv" secondAttribute="bottom" id="H7k-4e-nmN"/>
@@ -122,7 +143,7 @@
         <!--Menu Table View Controller-->
         <scene sceneID="wZn-x9-yRn">
             <objects>
-                <tableViewController id="ZRK-lE-BPr" customClass="MenuTableViewController" customModule="InterviewWhiteboard" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ZRK-lE-BPr" customClass="MenuTableViewController" customModule="Draftboard" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rK1-ad-xeM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="680"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,10 +160,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="PencilIcon" width="1024" height="1024"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

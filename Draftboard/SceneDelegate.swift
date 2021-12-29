@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  InterviewWhiteboard
+//  Draftboard
 //
 //  Created by Hans Wang on 1/16/21.
 //

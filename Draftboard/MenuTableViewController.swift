@@ -1,6 +1,6 @@
 //
 //  MenuTableViewController.swift
-//  InterviewWhiteboard
+//  Draftboard
 //
 //  Created by Hans Wang on 5/15/21.
 //

@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		28350EF42650AA90004D7C52 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		287C256225B4E986002492D3 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
-		28B5110B25B402A50048CD75 /* InterviewWhiteboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterviewWhiteboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28B5110B25B402A50048CD75 /* Draftboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draftboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28B5110E25B402A50048CD75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28B5111025B402A50048CD75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		28B5111225B402A50048CD75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		28B5110225B402A40048CD75 = {
 			isa = PBXGroup;
 			children = (
-				28B5110D25B402A50048CD75 /* InterviewWhiteboard */,
+				28B5110D25B402A50048CD75 /* Draftboard */,
 				28B5110C25B402A50048CD75 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 		28B5110C25B402A50048CD75 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				28B5110B25B402A50048CD75 /* InterviewWhiteboard.app */,
+				28B5110B25B402A50048CD75 /* Draftboard.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		28B5110D25B402A50048CD75 /* InterviewWhiteboard */ = {
+		28B5110D25B402A50048CD75 /* Draftboard */ = {
 			isa = PBXGroup;
 			children = (
 				28B5112625B4185A0048CD75 /* DataModal.swift */,
@@ -73,15 +73,15 @@
 				28B5111925B402A80048CD75 /* LaunchScreen.storyboard */,
 				28B5111C25B402A80048CD75 /* Info.plist */,
 			);
-			path = InterviewWhiteboard;
+			path = Draftboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		28B5110A25B402A50048CD75 /* InterviewWhiteboard */ = {
+		28B5110A25B402A50048CD75 /* Draftboard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 28B5111F25B402A80048CD75 /* Build configuration list for PBXNativeTarget "InterviewWhiteboard" */;
+			buildConfigurationList = 28B5111F25B402A80048CD75 /* Build configuration list for PBXNativeTarget "Draftboard" */;
 			buildPhases = (
 				28B5110725B402A50048CD75 /* Sources */,
 				28B5110825B402A50048CD75 /* Frameworks */,
@@ -91,9 +91,9 @@
 			);
 			dependencies = (
 			);
-			name = InterviewWhiteboard;
+			name = Draftboard;
 			productName = InterviewWhiteboard;
-			productReference = 28B5110B25B402A50048CD75 /* InterviewWhiteboard.app */;
+			productReference = 28B5110B25B402A50048CD75 /* Draftboard.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -110,7 +110,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 28B5110625B402A40048CD75 /* Build configuration list for PBXProject "InterviewWhiteboard" */;
+			buildConfigurationList = 28B5110625B402A40048CD75 /* Build configuration list for PBXProject "Draftboard" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -123,7 +123,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				28B5110A25B402A50048CD75 /* InterviewWhiteboard */,
+				28B5110A25B402A50048CD75 /* Draftboard */,
 			);
 		};
 /* End PBXProject section */
@@ -300,15 +300,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JE64V4NXX3;
-				INFOPLIST_FILE = InterviewWhiteboard/Info.plist;
+				INFOPLIST_FILE = Draftboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = OvO.InterviewWhiteboard;
+				PRODUCT_BUNDLE_IDENTIFIER = OvO.Draftboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -319,22 +319,22 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JE64V4NXX3;
-				INFOPLIST_FILE = InterviewWhiteboard/Info.plist;
+				INFOPLIST_FILE = Draftboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = OvO.InterviewWhiteboard;
+				PRODUCT_BUNDLE_IDENTIFIER = OvO.Draftboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		28B5110625B402A40048CD75 /* Build configuration list for PBXProject "InterviewWhiteboard" */ = {
+		28B5110625B402A40048CD75 /* Build configuration list for PBXProject "Draftboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				28B5111D25B402A80048CD75 /* Debug */,
@@ -343,7 +343,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		28B5111F25B402A80048CD75 /* Build configuration list for PBXNativeTarget "InterviewWhiteboard" */ = {
+		28B5111F25B402A80048CD75 /* Build configuration list for PBXNativeTarget "Draftboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				28B5112025B402A80048CD75 /* Debug */,
